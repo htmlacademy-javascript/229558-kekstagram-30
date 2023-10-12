@@ -1,6 +1,6 @@
 // 1. Функция для проверки длины строки
-const lengthValidation = (string, maxLeng) => string.length <= maxLeng;
-lengthValidation ('проверяемая строка', 20);
+const isLengthOk = (string, maxLeng) => string.length <= maxLeng;
+isLengthOk ('проверяемая строка', 20);
 
 // 2. Функция для проверки на палиндром.
 
@@ -41,9 +41,9 @@ const getNumbersFromStr = function (forCheck) {
 
 getNumbersFromStr('агент 007');
 
-// 3б
+// **3б
 
 const getNumbersFromStr2 = (forCheck) => Number(forCheck.split('').filter((i) => i.match(/\d/)).join(''));
 
-console.log(getNumbersFromStr2('2023 год'))
+getNumbersFromStr2('2023 год');
 
