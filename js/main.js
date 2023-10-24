@@ -37,7 +37,11 @@ function getNumFromRangeGenerator(min, max, type = 2) { // Функция слу
     } else if(type === 2) { //любое из диапазона, есть повторы (default)
       return getRandomNum();
     } else if(type === 3) { // по порядку с минимального до макс
-      return lastGeneratedId >= max ? 'Все ид-торы использованы' : lastGeneratedId += 1;
+      if(lastGeneratedId >= max) {
+        return 'Все ид-торы использованы';
+      }
+      lastGeneratedId += 1;
+      return lastGeneratedId;
     }
   }; // конец ф-ии возврата
 } // конец
