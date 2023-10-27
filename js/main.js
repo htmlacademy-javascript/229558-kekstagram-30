@@ -10,7 +10,6 @@ const createMessage = function(messageArr, messageNum) { //генерирует 
   for(let i = 0; i <= messageNum; i++) {
     message += getRandomItemFromArr(messageArr); // воспользоваться ф-ией без повторов  ***!!!!!!
   }
-
   return message;
 };
 
@@ -33,6 +32,7 @@ const getArrOfCommentsFromGenerator = function(num, userArr, MessageArr) { // с
   //const objArr = [...new Array(num+1)].map((e) => createComment(userArr, MessageArr))
   return objArr;
 };
+
 
 const createPhotoInfo = function(userArr, messageArr) { //итоговый объект
   const photoNum = generateMainObjectId();
