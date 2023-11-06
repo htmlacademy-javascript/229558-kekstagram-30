@@ -18,8 +18,6 @@ const generateLikesNumber = getRandomNumberFromRangeGenerator(15, 200); //likes,
 const generateNumOfPhrase = getRandomNumberFromRangeGenerator(0,2); // messageNum для количества  сообщений в комментарии случайное 0-2
 const generateNumOfComment = getRandomNumberFromRangeGenerator(0, 30); //commentNum число коментариев под фото, случайное 0-30
 
-
-
 //Экспорт
 export{userMessages, userNames, aimObjectNumber};
 export{generateMainObjectId,generateCommentId, generateLikesNumber, generateNumOfPhrase, generateAvaId, generateNumOfComment};
