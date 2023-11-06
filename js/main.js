@@ -1,6 +1,6 @@
 import {getRandomItemFromArr} from './util.js'; // все задаваемые данные и шаблоны
-import {userMessages, userNames, aimObjectNumber} from './variabledata.js'; // все задаваемые данные и шаблоны
-import {generateMainObjectId,generateCommentId, generateLikesNumber, generateNumOfPhrase, generateAvaId, generateNumOfComment} from './variabledata.js';
+import {userMessages, userNames, aimObjectNumber} from './variabledata.js'; // входные данные
+import {generateMainObjectId,generateCommentId, generateLikesNumber, generateNumOfPhrase, generateAvaId, generateNumOfComment} from './variabledata.js'; // счетчики
 
 ///Модуль генерящий итоговые объекты
 

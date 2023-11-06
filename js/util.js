@@ -1,4 +1,4 @@
-///Вспомогательные функции
+///Вспомогательные функции для генерации данных - случайные числа, элементы массива.  порядковые номера
 
 const getSerialNumberGenerator = function (min = 1, max) { // генерация порядковых номеров от  (опц: до)
 
@@ -6,7 +6,7 @@ const getSerialNumberGenerator = function (min = 1, max) { // генерация
 
   return function () {
     if(nextNum >= max) {
-      return 'Нет свободных номеров';
+      return 'Все идентификаторы диапазона использованы';
     }
 
     nextNum += 1;
@@ -14,7 +14,7 @@ const getSerialNumberGenerator = function (min = 1, max) { // генерация
   };
 };
 
-
+//TO DO: попробовать сложить двумя методами в объект. тут оставить вызов в зав-ти от типа. ...А зачем? ... проще разбить на 2 ф-ии. тогда случайное преезжает отдельно и переиспользуется. слетает замыкание(?). переиспользуется впрямую.
 const getRandomNumberFromRangeGenerator = function (min, max, type) { //генерация случайного числа из диапазона ( опц: уникального)
 
   min -= 1;
@@ -32,21 +32,22 @@ const getRandomNumberFromRangeGenerator = function (min, max, type) { //гене
 
     if(type === 'uniq') { //выдача уникальных значений диапазона в случайном порадке
       if(usedNums.length - 1 === max - min) {
-        return 'Все идентификаторы использованы';
+        return 'Все идентификаторы диапазона использованы';
       }
       while(usedNums.includes(nextNum)) {
         nextNum = getRandomNum();
       }
       usedNums.push(nextNum);
-      return nextNum; // любое число диапазона
-    } else {
+      return nextNum;
+
+    } else { // любое число диапазона в любых количествах
       return getRandomNum();
     }
   };
 };
 
 
-const getRandomItemFromArr = function(arr) { //случайный  элемент  массива // варинант ренерации случайного числа из диапазона без счетчика
+const getRandomItemFromArr = function(arr) { //случайный  элемент  массива
   const ind = getRandomNumberFromRangeGenerator(0, arr.length - 1);
   return arr[ind()];
 };
